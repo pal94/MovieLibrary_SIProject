@@ -185,5 +185,4 @@ The API is rest API and requests for movies that are stored in movie library whe
         'Content-Type':'application/json'
     },
     body: JSON.stringify(b)
-   
-})```
+   })```
