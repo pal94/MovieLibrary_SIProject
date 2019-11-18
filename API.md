@@ -403,8 +403,7 @@ Express
         amount: req.body.mov.amount,
         available: req.body.mov.available
     })
-    
- })```
+    })```
  
  
 **Delete Movies**
@@ -462,8 +461,7 @@ Express
             "_id": "5dd1d1be8ab3d858e51ca8e65"
         },
         "path": "_id"
-    }
-}```
+    }}```
 
 * **Sample Call**
   ```fetch("http://ec2-3-83-241-106.compute-1.amazonaws.com:3005/movies/"+id , {
