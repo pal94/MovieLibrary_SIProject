@@ -63,11 +63,11 @@ None
 
 * **Sample Call**
 
-   `app.get("/movies", async(req, res)=>{`
-   `await fetch('http://ec2-3-82-160-10.compute-1.amazonaws.com:3005/movies')`
-       `.then(response => response.json())`
-       `.then(data => {`
-         `let arr = [];`
+   ```app.get("/movies", async(req, res)=>{
+   await fetch('http://ec2-3-82-160-10.compute-1.amazonaws.com:3005/movies')
+       .then(response => response.json())
+       .then(data => {
+         let arr = [];
 
          for(var i =0;i< data.movies.length; i++){
              arr.push(data.movies[i]);
@@ -79,4 +79,4 @@ None
            console.log("could not get the data");
        });
     
-  `})`;`
+  });```
