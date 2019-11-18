@@ -177,12 +177,32 @@ The API is rest API and requests for movies that are stored in movie library whe
 }```
 
 * **Sample Call**
+  ```fetch("http://ec2-3-82-160-10.compute-1.amazonaws.com:3005/movies", {
+      method: "POST",
+      headers:{
+          'Accept': 'application/json',
+          'Content-Type':'application/json'
+      },
+      body: JSON.stringify(b)
+  })```
+  
 
-   ```fetch("http://ec2-3-82-160-10.compute-1.amazonaws.com:3005/movies", {
-    method: "POST",
-    headers:{
-         'Accept': 'application/json',
-        'Content-Type':'application/json'
-    },
-    body: JSON.stringify(b)
-   })```
+**Show Movie By Id**
+----
+
+* **URL**
+
+  /movies/id
+
+* **Method**
+
+  `GET`
+  
+* **URL Parameters** 
+
+  None
+  
+* **Data Parameters**
+  
+  None
+
