@@ -85,34 +85,20 @@ router.get('/movies/:id/edit', function(req,res){
 //ROUTE PUT: Edit the details of movie
 router.put('/movies/:id', function(req,res,next){
     console.log(req.params.id);
-    Moviemodel.findByIdAndUpdate(req.params.id, req.body.movie, function(err, movie){
-        if(err){
-            res.status(500).send({
-                error:err
-            })
-        }else{
+    Moviemodel.findByIdAndUpdate({_id:req.params.id},req.body).then(function(){
+        Moviemodel.findOne({_id: req.params.id}).then(function(movie){
             res.status(200).send({
-                movie:movie
+                movie
             })
-        }
-    });
-    // Moviemodel.findByIdAndUpdate({_id:req.params.id},req.body).then(function(movie){
-
-    // })
-    // then(function(){
-    //     Moviemodel.findOne({_id: req.params.id}).then(function(movie){
-    //         res.status(200).send({
-    //             movie
-    //         })
-    //     });
+        });
         
-    // })
-    // .catch(err=>{
-    //     console.log(err);
-    //     res.status(500).json({
-    //         error:err
-    //     });
-    // });
+    })
+    .catch(err=>{
+        console.log(err);
+        res.status(500).json({
+            error:err
+        });
+    });
 }); 
 
 //ROUTE DELETE: Delete the movie
