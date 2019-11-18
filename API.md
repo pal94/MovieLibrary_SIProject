@@ -200,9 +200,25 @@ The API is rest API and requests for movies that are stored in movie library whe
   
 * **URL Parameters** 
 
-  None
+ id: 
+  type[mongoose.Schema.Types.ObjectId]
   
 * **Data Parameters**
   
   None
 
+* **Success Response** 
+
+  Code: 201 Created <br />
+  Response: {
+    "message": "Movie added successfully",
+    "movie": {
+        "available": false,
+        "_id": "5dd25f946574f770d7428407",
+        "name": "Batman vs Superman7",
+        "genre": "Drama",
+        "rating": 2,
+        "amount": 11,
+        "__v": 0
+    }
+}
