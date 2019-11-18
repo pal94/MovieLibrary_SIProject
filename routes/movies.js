@@ -21,7 +21,7 @@ router.get('/movies',function(req,res,next){
     });
 
     //ROUTE POST: new list of movies
-    router.post("/addmovies", (req, res, next) => {
+    router.post("/movies", (req, res, next) => {
         const movie = new Moviemodel({
           _id: new mongoose.Types.ObjectId(),
           name: req.body.name,
