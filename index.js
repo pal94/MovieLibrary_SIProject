@@ -10,7 +10,7 @@ const app =express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 
-app.use('/',require('./routes/movies'));
+app.use('/movies',require('./routes/movies'));
 
 app.use(function(err,req,res,next){
     res.status(422).send({error:err.message});
