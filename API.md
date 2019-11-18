@@ -80,3 +80,19 @@ None
        });
     
   });```
+  
+
+** Add Movies **
+----
+
+* **URL**
+
+  /movies
+
+* **Method**
+
+  `POST`
+  
+* **URL Parameters** 
+None
+  
