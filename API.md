@@ -13,26 +13,12 @@ The API is rest API and requests for movies that are stored in movie library whe
   `GET`
 
 * **URL Parameters** 
-None
+
+  None
 
 * **Data Parameters** 
 
-  name: 
-    type[String]
-    required: true
-  genre: 
-    type[String]
-    required: true
-  rating:
-    type[Number]
-    min:1
-    max:5
-  amount:
-    type[Number]
-    required: true
-  available:
-    type[Boolean]
-    default:false
+  None
 
 * **Success Response** 
 
@@ -93,5 +79,98 @@ None
   `POST`
   
 * **URL Parameters** 
-None
+
+  None
   
+* **Data Parameters** 
+
+  name: 
+    type[String]
+    required: true
+  genre: 
+    type[String]
+    required: true
+  rating:
+    type[Number]
+    min:1
+    max:5
+  amount:
+    type[Number]
+    required: true
+  available:
+    type[Boolean]
+    default:false
+
+* **Success Response** 
+
+  Code: 201 Created <br />
+  Response: {
+    "message": "Movie added successfully",
+    "movie": {
+        "available": false,
+        "_id": "5dd25f946574f770d7428407",
+        "name": "Batman vs Superman7",
+        "genre": "Drama",
+        "rating": 2,
+        "amount": 11,
+        "__v": 0
+    }
+}
+
+* **Error Response**
+
+  Code: 500 Internal Serve Error<br />
+  Response: {
+    "error": {
+        "errors": {
+            "name": {
+                "message": "Path `name` is required.",
+                "name": "ValidatorError",
+                "properties": {
+                    "message": "Path `name` is required.",
+                    "type": "required",
+                    "path": "name"
+                },
+                "kind": "required",
+                "path": "name"
+            },
+            "genre": {
+                "message": "Path `genre` is required.",
+                "name": "ValidatorError",
+                "properties": {
+                    "message": "Path `genre` is required.",
+                    "type": "required",
+                    "path": "genre"
+                },
+                "kind": "required",
+                "path": "genre"
+            },
+            "rating": {
+                "message": "Path `rating` is required.",
+                "name": "ValidatorError",
+                "properties": {
+                    "message": "Path `rating` is required.",
+                    "type": "required",
+                    "path": "rating"
+                },
+                "kind": "required",
+                "path": "rating"
+            },
+            "amount": {
+                "message": "Path `amount` is required.",
+                "name": "ValidatorError",
+                "properties": {
+                    "message": "Path `amount` is required.",
+                    "type": "required",
+                    "path": "amount"
+                },
+                "kind": "required",
+                "path": "amount"
+            }
+        },
+        "_message": "movie validation failed",
+        "message": "movie validation failed: name: Path `name` is required., genre: Path `genre` is required., rating: Path `rating` is required., amount: Path `amount` is required.",
+        "name": "ValidationError"
+    }
+}
+    
