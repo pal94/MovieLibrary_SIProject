@@ -4,17 +4,18 @@ The API is rest API and requests for movies that are stored in movie library whe
 
 **Get Moives**
 ----
-* **URL** *
+* **URL** 
 /moives
 
-* **Method** *
-GET
+* **Method** 
 
-* **URL Parameters** *
+`GET`
+
+* **URL Parameters** 
 None
 
-* **Data Parameters** *
-name: 
+* **Data Parameters** 
+`name:` 
   type[String]
   required: true
 genre: 
@@ -31,9 +32,9 @@ available:
   type[Boolean]
   default:false
 
-* **Success Response** *
-Code: 200
-{
+* **Success Response** 
+Code: 200 <br />
+Response: {
             "available": false,
             "_id": "5dd2017886cea5610ac550e9",
             "name": "Batman vs Superman6",
