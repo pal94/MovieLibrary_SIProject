@@ -81,9 +81,8 @@ None
     
   });```
   
-
-** Add Movies **
-----
+ ** Add Movies **
+  ----
 
 * **URL**
 
