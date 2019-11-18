@@ -46,3 +46,37 @@ None
             "amount": 11,
             "__v": 0
   },
+  
+* **Error Response**
+
+  Code: 500 <br />
+  Response: {
+    "error": {
+        "message": "Cast to ObjectId failed for value \"get\" at path \"_id\" for model \"movie\"",
+        "name": "CastError",
+        "stringValue": "\"get\"",
+        "kind": "ObjectId",
+        "value": "get",
+        "path": "_id"
+    }
+}
+
+* **Sample Call**
+
+  app.get("/movies", async(req, res)=>{
+        await fetch('http://ec2-3-82-160-10.compute-1.amazonaws.com:3005/movies')
+       .then(response => response.json())
+       .then(data => {
+         let arr = [];
+
+         for(var i =0;i< data.movies.length; i++){
+             arr.push(data.movies[i]);
+         }
+
+         res.render("index", {mov:arr});
+       })    
+         .catch(err => {
+           console.log("could not get the data");
+       });
+    
+});
