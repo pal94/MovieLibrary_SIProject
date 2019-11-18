@@ -83,9 +83,9 @@ router.get('/movies/:id/edit', function(req,res){
 });
 
 //ROUTE PUT: Edit the details of movie
-router.put('/movies/:id',function(req,res,next){
+router.put('/movies/:id', async function(req,res,next){
     console.log(req.params.id);
-    Moviemodel.findByIdAndUpdate({_id:req.params.id},req.body).
+    await Moviemodel.findByIdAndUpdate({_id:req.params.id},req.body).
     exec()
     .then(function(movie){
         res.status(200).send({
