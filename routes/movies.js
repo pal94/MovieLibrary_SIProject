@@ -4,7 +4,7 @@ const Moviemodel = require('../models/movies');
 const mongoose = require('mongoose');
 
 //ROUTE GET: Get list of movies
-router.get('/getmovies',function(req,res,next){
+router.get('/movies',function(req,res,next){
     Moviemodel.find()
     .exec()
     .then(function(movies){
@@ -47,7 +47,7 @@ router.get('/getmovies',function(req,res,next){
       });
 
 //ROUTE GET By ID: Get the movie details by id
-router.get('/getmovies/:id', function(req, res){
+router.get('/movies/:id', function(req, res){
     if (mongoose.Types.ObjectId.isValid(req.params.id));
     Moviemodel.findOne({_id : req.params.id}).select('name genre rating amount available _id')
     .exec()
@@ -65,7 +65,7 @@ router.get('/getmovies/:id', function(req, res){
 });
 
 //ROUTE GET EDIT DATA: Get the data for movie to be edited in the form to be edited
-router.get('/getmovies/:id/edit', function(req,res){
+router.get('/movies/:id/edit', function(req,res){
     if (mongoose.Types.ObjectId.isValid(req.params.id));
     Moviemodel.findOne({_id : req.params.id}).select('name genre rating amount available _id')
     .exec()
@@ -83,7 +83,7 @@ router.get('/getmovies/:id/edit', function(req,res){
 });
 
 //ROUTE PUT: Edit the details of movie
-router.put('/getmovies/:id', function(req,res,next){
+router.put('/movies/:id', function(req,res,next){
     console.log(req.params.id);
     Moviemodel.findByIdAndUpdate({_id:req.params.id},req.body).then(function(){
         Moviemodel.findOne({_id: req.params.id}).then(function(movie){
@@ -102,7 +102,7 @@ router.put('/getmovies/:id', function(req,res,next){
 }); 
 
 //ROUTE DELETE: Delete the movie
-router.delete('/getmovies/:id',function(req,res,next){
+router.delete('/movies/:id',function(req,res,next){
     Moviemodel.findByIdAndRemove({_id:req.params.id})
     .then(function(movie){
         res.status(200).send({
