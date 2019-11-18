@@ -11,7 +11,6 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 
 app.use('/',require('./routes/movies'));
-app.use('/orders',require('./routes/Orders'));
 
 app.use(function(err,req,res,next){
     res.status(422).send({error:err.message});
