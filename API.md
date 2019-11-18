@@ -120,7 +120,9 @@ The API is rest API and requests for movies that are stored in movie library whe
 * **Error Response**
 
   Code: 500 Internal Serve Error<br />
-  Response: {
+  Response: 
+  
+  ```{
     "error": {
         "errors": {
             "name": {
@@ -172,5 +174,16 @@ The API is rest API and requests for movies that are stored in movie library whe
         "message": "movie validation failed: name: Path `name` is required., genre: Path `genre` is required., rating: Path `rating` is required., amount: Path `amount` is required.",
         "name": "ValidationError"
     }
-}
-    
+}```
+
+* **Sample Call**
+
+   ```fetch("http://ec2-3-82-160-10.compute-1.amazonaws.com:3005/movies", {
+    method: "POST",
+    headers:{
+         'Accept': 'application/json',
+        'Content-Type':'application/json'
+    },
+    body: JSON.stringify(b)
+   
+})```
