@@ -8,4 +8,4 @@ Mongo DB
 Node.js
 Express
 
-Refer to API documentation: 
+Refer to API documentation:  https://github.com/pal94/MovieLibrary_SIProject/blob/master/API.md
