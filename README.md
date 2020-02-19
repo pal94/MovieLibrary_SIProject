@@ -7,3 +7,5 @@ The API is rest API and requests for movies that are stored in movie library whe
 Mongo DB
 Node.js
 Express
+
+Refer to API documentation: 
